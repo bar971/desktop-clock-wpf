@@ -94,3 +94,8 @@ all settings to their defaults.
 ## License
 
 Released under the [MIT License](LICENSE).
+
+## Documentation
+
+- [User Guide (English)](docs/Clock-User-Guide-EN.docx)
+- [Guida utente (Italiano)](docs/Clock-Guida-IT.docx)
