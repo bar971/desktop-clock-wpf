@@ -1,0 +1,40 @@
+﻿<Window x:Class="Clock.Help" Name="HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Help" PreviewMouseRightButtonUp="Window_PreviewMouseRightButtonUp"
+    WindowStyle="None" AllowsTransparency='True' Opacity="0.8"
+        Topmost='False' Background="Transparent"  ShowInTaskbar='False' 
+        SizeToContent="WidthAndHeight" WindowStartupLocation="Manual"
+        VerticalAlignment="Top" HorizontalAlignment="Left" MouseLeftButtonDown="HelpWindow_MouseLeftButtonDown">
+    <Border Name="HelpBorder"
+            BorderBrush="Red"
+            BorderThickness="5"
+            CornerRadius="5"
+            Background="White">
+        <TextBlock Name="HelpBlock" FontSize="10" FontFamily="Tahoma" FontStretch="Condensed">
+            <Span FontWeight="Bold" FontSize="12" xml:space="preserve">                                 Help</Span><LineBreak/>
+            <LineBreak/>
+            <Span FontWeight="Bold">Keyboard:</Span><LineBreak/>
+            A/S - Start/Stop Colors Animation. S for simple animation<LineBreak/>
+            R - Random Gradient Color<LineBreak/>
+            B - Random Solid Color<LineBreak/>
+            O - Original Color<LineBreak/>
+            T - Toggle Clock Always On Top<LineBreak/>
+            I - Rotate ClockWise<LineBreak/>
+            P - Rotate CounterClockWise<LineBreak/>
+            +/- - Increase/Decrease Clock Size<LineBreak/>
+            C - Open Choose Color Window<LineBreak/>
+            H - Show This Help<LineBreak/>
+            <LineBreak/>
+            <Span FontWeight="Bold">Mouse:</Span><LineBreak/>
+            Left Click - Move Clock<LineBreak/>
+            Left Double Click - Open Calendar<LineBreak/>
+            Scrolling Wheel   - Increase/Decrease Clock Size<LineBreak/>
+            Right Click       - Close Calendar; Close Help; Exit Application<LineBreak/>
+            <Span FontWeight="Bold">Mouse Two Seconds on Clock for Today Date ToolTip</Span>
+            <LineBreak/>
+        </TextBlock>
+    </Border>
+</Window>
+    
+

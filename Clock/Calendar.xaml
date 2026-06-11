@@ -1,0 +1,21 @@
+﻿<Window x:Class="Clock.Calendar" Name="CalendarWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Calendar"
+        WindowStyle="None" AllowsTransparency='True' Opacity="0.8"
+        Topmost='False' Background="Transparent"  ShowInTaskbar='False' 
+        SizeToContent="WidthAndHeight" WindowStartupLocation="Manual"
+        VerticalAlignment="Top" HorizontalAlignment="Left">
+    <Border Name="CalendarBorder"
+            BorderBrush="Red"
+            BorderThickness="5"
+            CornerRadius="5"
+            Background="White">
+        <Calendar Name="Cal"                  
+                  Background="Transparent"
+                  BorderBrush="Transparent"
+                  MouseLeftButtonDown="Calendar_MouseLeftButtonDown" 
+                  MouseRightButtonUp="Calendar_MouseRightButtonUp">
+        </Calendar>
+    </Border>
+</Window>

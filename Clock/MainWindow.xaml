@@ -1,0 +1,81 @@
+﻿<Window x:Class="Clock.MainWindow"
+        Name="ClockWindow"
+        DataContext="{Binding ElementName=ClockWindow}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        WindowStyle="None" AllowsTransparency='True' 
+        Topmost='False' Background="Transparent"  ShowInTaskbar='False' 
+        SizeToContent="WidthAndHeight" WindowStartupLocation="Manual"
+        VerticalAlignment="Top" HorizontalAlignment="Left" 
+        KeyDown="Window_KeyDown">
+    <Window.Resources>
+        <Style x:Key="{x:Type ToolTip}" TargetType="ToolTip">
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="HasDropShadow" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToolTip">
+                        <Border CornerRadius="7" 
+                                HorizontalAlignment="Center" 
+                                VerticalAlignment="Top" 
+                                Padding="5" 
+                                BorderThickness="3,3,3,3"
+                                Background="{TemplateBinding Background}">   <!--"#FFA7BA58">-->
+                            <Border.BorderBrush>
+                                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                                    <GradientStop Color="#FF01FFA2" Offset="0"/>
+                                    <GradientStop Color="#FF00FF62" Offset="0.374"/>
+                                    <GradientStop Color="#FF8EFF00" Offset="0.528"/>
+                                    <GradientStop Color="#FF27D700" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.BorderBrush>
+                            <StackPanel>
+                                <TextBlock FontFamily="Tahoma" FontSize="11" Text="{TemplateBinding Content}" Foreground="Black" />
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Border Name="ClockBorder" 
+            BorderBrush="Transparent"            
+            Background="Transparent"
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top"
+            RenderTransformOrigin="0.5,0.5">
+        <Label Name="ClockLabel"              
+               Content="{Binding CurrentDateAndTime}"
+               ContentStringFormat="{}  {0:HH:mm:ss} "
+               Opacity="0.7"  
+               FontFamily="Impact" 
+               FontWeight="800" 
+               FontSize="1in" 
+               MouseLeftButtonDown="ClockLabel_MouseLeftButtonDown" 
+               MouseWheel="ClockLabel_MouseWheel" 
+               MouseRightButtonUp="ClockLabel_MouseRightButtonUp" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Center"  
+               RenderTransformOrigin="0.5,0.5" MouseMove="ClockLabel_MouseMove"
+               ToolTipService.InitialShowDelay="2000"
+               ToolTipService.ShowDuration="2500"
+               MouseDoubleClick="ClockLabel_MouseDoubleClick" MouseEnter="ClockLabel_MouseEnter">
+            <Label.Foreground>
+                <LinearGradientBrush>
+                    <GradientStop Color="Green" Offset="1"/>
+                    <GradientStop Color="GreenYellow" Offset="0.8"/>
+                    <GradientStop Color="YellowGreen" Offset="0.4"/>
+                    <GradientStop Color="Yellow" Offset="0"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+            <Label.ToolTip>
+                <ToolTip Name="TodayDate" 
+                         Opened="TodayDate_Opened" 
+                         Closed="TodayDate_Closed">
+                </ToolTip>
+            </Label.ToolTip>
+        </Label>
+    </Border>
+</Window> 
